@@ -40,6 +40,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'capistrano', '~> 3.6'
   gem 'capistrano-rails', '~> 1.3'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger', '>= 0.1.1'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-rails-collection'
 end
 
 group :development do
