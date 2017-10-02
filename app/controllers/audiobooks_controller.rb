@@ -15,7 +15,7 @@ class AudiobooksController < ApplicationController
       render '404'
       return
     end
-    @chapters = (Dir.entries(@audiobook) - ['.', '..']).sort
+    @chapters = (Dir.entries(@audiobook) - ['.', '..'])
     @audiobook = @audiobook.to_s.gsub(@audiobook.dirname.to_s + '/', '')
   end
 

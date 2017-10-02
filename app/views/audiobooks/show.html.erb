@@ -1,7 +1,7 @@
 <h1><%= link_to '<', root_path %> <%= @audiobook %></h1>
 
 <ul>
-  <% @chapters.each do |chapter| %>
+  <% @chapters.sort.each do |chapter| %>
     <li>
       <h3><%= chapter %></h3>
       <audio id="<%= chapter %>" controls>
