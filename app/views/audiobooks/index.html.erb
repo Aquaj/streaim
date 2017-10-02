@@ -1,0 +1,15 @@
+<h1>HELLO AÏM</h1>
+<h2>ENJOY YOUR AUDIOBOOKS</h2>
+
+<ul>
+  <% @directories.each do |book| %>
+    <li>
+      <%= link_to 'book', audiobook_path(book) %>
+    </li>
+  <% end %>
+  <% @audiobooks.each do |book| %>
+    <li>
+      <%= book %>
+    </li>
+  <% end %>
+</ul>

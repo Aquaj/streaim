@@ -1,0 +1,12 @@
+<h1><%= link_to '<', root_path %> <%= @audiobook %></h1>
+
+<ul>
+  <% @chapters.each do |chapter| %>
+    <li>
+      <h3><%= chapter %></h3>
+      <audio id="<%= chapter %>" controls>
+        <source src="<%= stream_path(audiobook_id: @audiobook, chapter_id:  chapter) %>"></source>
+      </audio>
+    </li>
+  <% end %>
+</ul>
