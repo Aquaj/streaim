@@ -8,7 +8,7 @@ class Content
     def new(*args, &block)
       content = super
       return content if content.exist?
-      Rails.logger << content
+      Rails.logger.debug content
       NoSuchFile
     end
   end
