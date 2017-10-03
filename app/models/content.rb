@@ -20,7 +20,6 @@ class Content
 
   def initialize(path)
     @path      = path.split('/')
-    @path[-1] += '.mp3' unless directory?
   end
   delegate :exist?, :directory?, to: :full_path
 
