@@ -4,14 +4,16 @@ class Content
 
   CONTENT_ROOT_DIR = Rails.root.join('app', 'assets', 'audiobooks')
 
-  attr_reader :path
-
   class << self
     def new(*args, &block)
       content = super
       return content if content.exist?
       NoSuchFile
     end
+  end
+
+  def path
+    @path.join('/')
   end
 
   def initialize(path)
