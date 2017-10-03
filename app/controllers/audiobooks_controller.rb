@@ -13,6 +13,7 @@ class AudiobooksController < ApplicationController
   end
 
   def find_content
+    Rails.logger.debug params[:path]
     content = Content.new(params[:path] || '/')
     raise ActiveRecord::RecordNotFound if content == Content::NoSuchFile
     content
