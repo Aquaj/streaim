@@ -15,6 +15,7 @@ class Content
   end
 
   def path
+    Rails.logger.debug @path
     @path.join('/')
   end
 
