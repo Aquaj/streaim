@@ -12,7 +12,7 @@
   <% @current.directories.each do |dir| %>
     <li><%= link_to dir.name, content_path(dir.path) %></li>
   <% end %>
-  <% @current.files.each do |audio| %>
+  <% @current.audios.each do |audio| %>
     <li>
       <h3><%= audio.name %></h3>
       <audio id="<%= audio.name %>" controls>
