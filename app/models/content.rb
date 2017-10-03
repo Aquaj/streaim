@@ -4,6 +4,8 @@ class Content
 
   CONTENT_ROOT_DIR = Rails.root.join('app', 'assets', 'audiobooks')
 
+  attr_reader :path
+
   class << self
     def new(*args, &block)
       content = super
