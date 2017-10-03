@@ -7,7 +7,7 @@ class AudiobooksController < ApplicationController
   end
 
   def stream
-    params[:path] += '.'+request.format
+    params[:path] += ".#{request.format.symbol}"
     @audio = find_content
     send_file @audio.full_path
   end
