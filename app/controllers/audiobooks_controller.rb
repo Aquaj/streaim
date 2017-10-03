@@ -15,6 +15,7 @@ class AudiobooksController < ApplicationController
     if request.format.symbol != :html && params[:path]
       path = "#{params[:path]}.#{request.format.symbol}"
     end
+    path ||= params[:path]
 
     content = Content.new(path || '/')
     raise ActiveRecord::RecordNotFound if content == Content::NoSuchFile
