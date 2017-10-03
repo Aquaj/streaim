@@ -15,6 +15,7 @@ class AudiobooksController < ApplicationController
     if request.format.symbol != :html && params[:path]
       path = "#{params[:path]}.#{request.format.symbol}"
     end
+    Rails.logger.debug path
     path ||= params[:path]
 
     content = Content.new(path || '/')
