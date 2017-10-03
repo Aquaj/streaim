@@ -12,7 +12,7 @@ class AudiobooksController < ApplicationController
   end
 
   def find_content
-    Rails.logger.debug "HELLO - " + request.format.symbol
+    Rails.logger.debug "HELLO - " + request.format.symbol.to_s
     if request.format.symbol != :html && params[:path]
       path = "#{params[:path]}.#{request.format.symbol}"
     end
