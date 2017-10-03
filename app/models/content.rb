@@ -42,4 +42,5 @@ class Content
     return nil if @path.empty?
     full_path.to_s.gsub(full_path.dirname.to_s + '/', '')
   end
+  delegate :<=>, to: :name
 end
