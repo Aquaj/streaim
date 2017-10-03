@@ -19,7 +19,7 @@ class Content
   end
 
   def initialize(path)
-    @path      = path.split('/')
+    @path = path.split('/')
   end
   delegate :exist?, :directory?, to: :full_path
 
