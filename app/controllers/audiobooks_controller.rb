@@ -7,14 +7,13 @@ class AudiobooksController < ApplicationController
   end
 
   def stream
-    params[:path] += ".#{request.format.symbol}"
     @audio = find_content
     send_file @audio.full_path
   end
 
   def find_content
-    Rails.logger.debug params[:path]
-    content = Content.new(params[:path] || '/')
+    path = "#{params[:path]}.#{request.format.symbol}" if params[:path]
+    content = Content.new(path || '/')
     raise ActiveRecord::RecordNotFound if content == Content::NoSuchFile
     content
   end
