@@ -29,7 +29,7 @@ class Content
   def files
     return nil unless directory?
     paths = Dir.entries(full_path) - ['.', '..']
-    paths.map { |path| Content.new(path) }
+    paths.map { |filepath| Content.new(self.path+'/'+filepath) }
   end
 
   def audios
