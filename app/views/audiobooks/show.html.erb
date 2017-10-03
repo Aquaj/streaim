@@ -1,11 +1,22 @@
-<h1><%= link_to '<', root_path %> <%= @audiobook %></h1>
+<% if @current.name %>
+  <h1>
+    <%= link_to '<', root_path %>
+    <%= @current.name %>
+  </h1>
+<% else %>
+  <h1> COUCOU AÏM </h1>
+  <h2> Enjoy your audiobooks </h2>
+<% end %>
 
 <ul>
-  <% @chapters.sort.each do |chapter| %>
+  <% @current.directories.each do |dir| %>
+    <li><%= link_to dir.name, content_path(dir.path) %></li>
+  <% end %>
+  <% @current.files.each do |audio| %>
     <li>
-      <h3><%= chapter %></h3>
-      <audio id="<%= chapter %>" controls>
-        <source src="<%= stream_path(audiobook_id: @audiobook, chapter_id:  chapter) %>"></source>
+      <h3><%= audio.name %></h3>
+      <audio id="<%= audio.name %>" controls>
+        <source src="<%= stream_path(path: audio.path) %>"></source>
       </audio>
     </li>
   <% end %>
