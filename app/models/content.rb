@@ -18,8 +18,12 @@ class Content
     @path.join('/')
   end
 
+  def parent
+    Content.new(@path[0...-1].join('/'))
+  end
+
   def initialize(path)
-    @path = path.split('/')
+    @path = path.split('/').reject(&:empty?)
   end
   delegate :exist?, :directory?, to: :full_path
 
@@ -30,7 +34,7 @@ class Content
   def files
     return nil unless directory?
     paths = Dir.entries(full_path) - ['.', '..']
-    paths.map { |filepath| Content.new(self.path+'/'+filepath) }
+    paths.map { |filepath| Content.new(self.path + '/' + filepath) }
   end
 
   def audios

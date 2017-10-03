@@ -1,6 +1,6 @@
 <% if @current.name %>
   <h1>
-    <%= link_to '<', root_path %>
+    <%= link_to '<', content_path(@current.parent.path) %>
     <%= @current.name %>
   </h1>
 <% else %>
