@@ -15,8 +15,7 @@
   <% @current.audios.each do |audio| %>
     <li>
       <h3><%= audio.name %></h3>
-      <audio id=<%= audio.name.dasherize %> controls className="player" preload="false">
-        <source src=<%= stream_path(path: audio.path) %> type="audio/mp3"/>
+      <%= audio_tag stream_path(path: audio.path), controls: true %>
       </audio>
     </li>
   <% end %>
