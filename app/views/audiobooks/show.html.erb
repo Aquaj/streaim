@@ -15,9 +15,7 @@
   <% @current.audios.each do |audio| %>
     <li>
       <h3><%= audio.name %></h3>
-      <audio id="<%= audio.name %>" controls>
-        <source src="<%= stream_path(path: audio.path) %>"></source>
-      </audio>
+      <%= react_component 'Audio', id: audio.name, action: :show, audio: { path: stream_path(audio.path) } %>
     </li>
   <% end %>
 </ul>

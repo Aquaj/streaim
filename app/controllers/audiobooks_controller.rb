@@ -8,7 +8,7 @@ class AudiobooksController < ApplicationController
 
   def stream
     @audio = find_content
-    send_file @audio.full_path
+    send_file @audio.full_path, content_type: :'audio/mpeg'
   end
 
   def find_content
