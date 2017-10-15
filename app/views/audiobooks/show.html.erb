@@ -15,7 +15,9 @@
   <% @current.audios.each do |audio| %>
     <li>
       <h3><%= audio.name %></h3>
-      <%= react_component 'Audio', id: audio.name, action: :show, audio: { path: stream_path(audio.path) } %>
+      <audio id=<%= audio.name.dasherize %> controls className="player" preload="false">
+        <source src=<%= stream_path(path: audio.path) %> type="audio/mp3"/>
+      </audio>
     </li>
   <% end %>
 </ul>

@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require plyr
 //= require rails-ujs
 //= require turbolinks
 //= require jquery
@@ -18,3 +19,7 @@
 //= require react_ujs
 //= require components
 //= require_tree .
+
+$(document).on("turbolinks:load", function() {
+  plyr.setup();
+});
