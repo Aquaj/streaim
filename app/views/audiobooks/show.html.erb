@@ -15,7 +15,7 @@
   <% @current.audios.each do |audio| %>
     <li>
       <h3><%= audio.name %></h3>
-      <%= audio_tag stream_path(path: audio.path), controls: true %>
+      <%= audio_tag stream_path(path: audio.path), controls: true, preload: :none %>
       </audio>
     </li>
   <% end %>
