@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
-//= require components
 //= require_tree .
 
 $(document).on("turbolinks:load", function() {
