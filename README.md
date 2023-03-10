@@ -1,24 +1,6 @@
-# README
+# Streaim
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Basic Rails app to stream files from the disk to clients, hidden behind a basic HTTP auth.
+Auth is provided through env var STREAM_PASSWORD. Files are to be stored at `app/assets/audiobooks`.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Deployed through Capistrano.
